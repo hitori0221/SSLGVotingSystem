@@ -9,10 +9,10 @@ $profile = [
 ];
 
 $items = [
-    ['href' => '../pages/Dashboard_SuperAdmin.php', 'title' => 'Dashboard', 'icon' => $dashboardIcon, 'isActive' => ($_SERVER['REQUEST_URI'] == '/sslg/pages/Dashboard_SuperAdmin.php')],
-    ['href' => '../pages/School_SuperAdmin.php', 'title' => 'Schools', 'icon' => $schoolIcon , 'isActive' => ($_SERVER['REQUEST_URI'] == '/sslg/pages/School_SuperAdmin.php')],
-    ['href' => '../pages/Users_SuperAdmin.php', 'title' => 'Users', 'icon' => $userIcon , 'isActive' => ($_SERVER['REQUEST_URI'] == '/sslg/pages/Users_SuperAdmin.php')],
-    ['href' => '../pages/Database_SuperAdmin.php', 'title' => 'Database', 'icon' => $databaseIcon , 'isActive' => ($_SERVER['REQUEST_URI'] == '/sslg/pages/Database_SuperAdmin.php')]
+    ['href' => '../pages/Dashboard_SuperAdmin.php', 'title' => 'Dashboard', 'icon' => $dashboardIcon, 'isActive' => ($_SERVER['REQUEST_URI'] == '/SSLGVotingSystem/pages/Dashboard_SuperAdmin.php')],
+    ['href' => '../pages/School_SuperAdmin.php', 'title' => 'Schools', 'icon' => $schoolIcon , 'isActive' => ($_SERVER['REQUEST_URI'] == '/SSLGVotingSystem/pages/School_SuperAdmin.php')],
+    ['href' => '../pages/Users_SuperAdmin.php', 'title' => 'Users', 'icon' => $userIcon , 'isActive' => ($_SERVER['REQUEST_URI'] == '/SSLGVotingSystem/pages/Users_SuperAdmin.php')],
+    ['href' => '../pages/Database_SuperAdmin.php', 'title' => 'Database', 'icon' => $databaseIcon , 'isActive' => ($_SERVER['REQUEST_URI'] == '/SSLGVotingSystem/pages/Database_SuperAdmin.php')]
 ];
 
 $items2 = [
@@ -27,11 +27,12 @@ $items2 = [
                 <div>
                     <img class="w-20 h-20 mx-auto rounded-full object-cover" src="<?= $profile['image']; ?>" alt="Profile">
                     <h1 class="text-lg font-semibold text-center dark:text-gray-50 text-gray-900"><?= $profile['name']; ?></h1>
-                    <p class="text-sm text-center text-gray-500"><?= $profile['email']; ?></p>
+                    
                 </div>
             </li>
         <?php endif; ?>
-            <br/>
+      
+            <hr class="border-t border-gray-200 dark:border-gray-700 my-4"/>
         <ul class="space-y-2 font-medium text-sm">
             <?php foreach ($items as $item): ?>
                 <?php
@@ -48,7 +49,12 @@ $items2 = [
                     </a>
                 </li>
             <?php endforeach; ?>
-                <hr class="border-t border-gray-200 dark:border-gray-700"/>
+            <div class="flex items-center">
+  
+  <hr class="flex-grow border-t border-gray-200 dark:border-gray-700">
+</div>
+
+
             <?php foreach ($items2 as $item): ?>
                 <?php
                     // Check if the current page URL matches the sidebar item href
