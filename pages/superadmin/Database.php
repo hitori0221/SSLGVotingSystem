@@ -1,5 +1,5 @@
 <?php
-    include_once "../Includes/Components.php";
+    
 
 ?>
 
@@ -96,6 +96,7 @@
     </div>
 
     
+
     <div class="p-4 sm:ml-64 rounded-lg dark:bg-gray-900 bg-white h-screen ">
         <div class="flex">
       
