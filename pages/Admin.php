@@ -1,6 +1,6 @@
 <?php
 
-    include_once '../components/superadmin/sidenav.php';
+    include '../components/admin/sidenav.php';
 
 ?>
 
@@ -24,14 +24,12 @@
  
     <link href="../src/output.css" rel="stylesheet">
     <style>
-        [drawer-backdrop] {
-        background-color: rgba(34, 34, 34, 0.8) !important; 
-}
+     
     </style>
 
     
 </head>
-<body class="bg-zinc-100 dark:bg-neutral-950 ">
+<body class="bg-zinc-100 dark:bg-gray-950 ">
     <div class="flex sm:ml-64 items-center">
         <button data-drawer-target="separator-sidebar" data-drawer-toggle="separator-sidebar" aria-controls="separator-sidebar" type="button" class="inline-flex items-center p-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
             <span class="sr-only">Open sidebar</span>
@@ -40,7 +38,7 @@
             </svg>
         </button>
    
-        <header class="bg-zinc-100 dark:bg-neutral-950  text-black border-neutral-200 flex-1 ">
+        <header class="bg-zinc-100 dark:bg-gray-950  text-black border-neutral-200 flex-1 ">
             <div class="flex flex-wrap items-center justify-between mx-auto p-4 border-l border-gray-200 dark:border-neutral-900">
                 <a href="" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <span class="text-lg font-semibold text-gray-800 dark:text-gray-50">SSLG Voting System</span>
@@ -72,7 +70,7 @@
     
 
     <main id="main-content" class=" p-11 sm:ml-64 rounded-l-lg h-screen border-t border-l border-gray-200 dark:border-neutral-800 
-        bg-white dark:bg-zinc-900 bg-cover bg-center "
+        bg-white dark:bg-gray-900 bg-cover bg-center "
        >
         
     </main>

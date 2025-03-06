@@ -1,35 +1,42 @@
 <?php
 // Include icon definitions
-include_once 'icons.php';
+include 'icons.php';
 
 $activeMenu = isset($_GET['menu']) ? $_GET['menu'] : 0;
 $school = [
-    'image' => '../icons/Alice_Halo.png',
-    'name' => 'SUPERADMIN',
+    'image' => '../icons/logo.png',
+    'name' => 'CNHS',
     'email' => ''
 ];
 
 $profile = [
     'image' => '../icons/Alice_Halo.png',
-    'name' => 'superadmin',
+    'name' => '980831',
     'email' => 'jbtejolan@gmail.com'
 ];
 
 $items = [
-    ['href' => '../pages/superadmin/Dashboard.php', 'title' => 'Dashboard', 'icon' => $dashboardIcon],
-    ['href' => '../pages/superadmin/School.php', 'title' => 'Schools', 'icon' => $schoolIcon],
-    ['href' => '../pages/superadmin/Users.php', 'title' => 'Users', 'icon' => $userIcon],
-    ['href' => '../pages/superadmin/Database.php', 'title' => 'Database', 'icon' => $databaseIcon]
+    ['href' => '../pages/admin/Dashboard.php', 'title' => 'Dashboard', 'icon' => $dashboardIcon],
+    
 ];
 
 $items2 = [
-    ['href' => '../pages/superadmin/Settings.php', 'title' => 'Settings', 'icon' => $settingIcon]
+    ['href' => '../pages/admin/School.php', 'title' => 'Candidates', 'icon' => $candidateIcon],
+    ['href' => '../pages/admin/Users.php', 'title' => 'Voters', 'icon' => $userIcon],
+    ['href' => '../pages/admin/Users.php', 'title' => 'Students', 'icon' => $userIcon]
+];
+
+$items3 = [
+    ['href' => '../pages/admin/School.php', 'title' => 'Election', 'icon' => $candidateIcon],
+    ['href' => '../pages/admin/Users.php', 'title' => 'Landing Page', 'icon' => $userIcon],
+    ['href' => '../pages/admin/Users.php', 'title' => 'Ballot', 'icon' => $userIcon],
+
 ];
 ?>
 <aside id="separator-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform duration-500 ease-in-out -translate-x-full sm:translate-x-0" aria-label="Sidebar">
 
 
-<div class="overflow-y-auto bg-zinc-100 dark:bg-neutral-950 relative h-full">
+<div class="overflow-y-auto bg-zinc-100 dark:bg-gray-950 relative h-full">
         
         <?php if ($school !== null): ?>
             <div  aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom" class="flex items-center justify-between gap-2 mx-4 my-3  hover:bg-neutral-800 rounded cursor-pointer p-2">
@@ -79,8 +86,9 @@ $items2 = [
                 </li>
             <?php endforeach; ?>
             
-            <div class="flex items-center my-4">
-                <hr class="flex-grow border-t border-gray-200 dark:border-neutral-900">
+            <div class="flex items-center mb-2 mx-6 mt-6">
+                
+                <p class="text-sm dark:text-neutral-700">Manage</p>
             </div>
 
             <?php foreach ($items2  as $index => $item): ?>
@@ -95,9 +103,27 @@ $items2 = [
                   </a>
               </li>
           <?php endforeach; ?>
+
+          <div class="flex items-center mb-2 mx-6 mt-6">
+                
+                <p class="text-sm dark:text-neutral-700">Settings</p>
+            </div>
+
+            <?php foreach ($items3  as $index => $item): ?>
+              
+
+              <li class="relative flex items-center px-4 h-10 cursor-pointer" data-index="<?= count($items) + count($items2) + $index ?>" data-href="<?= $item['href']; ?>" data-title="<?= $item['title']; ?>">
+                  <a href="" id="iconLink" class="flex items-center p-2 rounded-lg w-full dark:hover:bg-neutral-800 hover:bg-neutral-200 hover:text-neutral-950 dark:hover:text-white" data-index="<?= count($items) + count($items2) + $index ?>" >
+                      <svg class="shrink-0 w-[21px] h-[21px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                          <?= $item['icon']; ?>
+                      </svg>
+                      <span class="ms-3"><?= $item['title']; ?></span>
+                  </a>
+              </li>
+          <?php endforeach; ?>
         </ul>
         
-        <div  class="border-t border-gray-200 dark:border-neutral-900 fixed bottom-0 left-0 w-64 dark:bg-neutral-950  flex items-center justify-center py-4">
+        <div  class="border-t border-gray-200 dark:border-neutral-900 fixed bottom-0 left-0 w-64 dark:bg-gray-950  flex items-center justify-center py-4">
             <div style="width: calc(16rem - 2rem);" class="rounded flex items-center justify-between gap-2 dark:hover:bg-neutral-800 hover:bg-neutral-200  cursor-pointer p-2">
                 
                 <img class="mr-2 w-8 h-8 rounded-full object-cover" src="<?= $profile['image']; ?>" alt="Profile">
