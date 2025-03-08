@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
     // On page load, set theme from localStorage
     if (localStorage.getItem("theme") === "dark") {
@@ -23,8 +23,11 @@
   </script>
  
     <link href="../src/output.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <style>
-     
+    
     </style>
 
     
@@ -39,7 +42,7 @@
         </button>
    
         <header class="bg-zinc-100 dark:bg-gray-950  text-black border-neutral-200 flex-1 ">
-            <div class="flex flex-wrap items-center justify-between mx-auto p-4 border-l border-gray-200 dark:border-neutral-900">
+            <div class="flex flex-wrap items-center justify-between mx-auto p-4 md:border-l border-0 border-gray-200 dark:border-neutral-900">
                 <a href="" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <span class="text-lg font-semibold text-gray-800 dark:text-gray-50">SSLG Voting System</span>
 
@@ -69,15 +72,16 @@
 
     
 
-    <main id="main-content" class=" p-11 sm:ml-64 rounded-l-lg h-screen border-t border-l border-gray-200 dark:border-neutral-800 
-        bg-white dark:bg-gray-900 bg-cover bg-center "
-       >
+    <main id="main-content" class="p-3.5 md:mb-7 sm:mb-0 lg:p-11 sm:ml-64 rounded-l-0 md:rounded-l-lg h-screen border-t border-l border-gray-200 dark:border-neutral-800 
+        bg-white dark:bg-gray-900 bg-cover bg-center ">
+        
+
         
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
-
     
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     <script>
 
 function toggleTheme() {
@@ -101,6 +105,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+</script>
+
+<script>
+    let isVotingEnabled = true; // Default state
+
+    function enableVote() {
+        const voteStatusText = document.getElementById('voteStatusText');
+        const statusIcon = document.getElementById('statusIcon');
+        const button = document.getElementById('voteStatusBtn');
+        const buttonText = document.getElementById('buttonText');
+        const buttonIcon = document.getElementById('buttonIcon');
+
+        isVotingEnabled = !isVotingEnabled;
+
+        if (isVotingEnabled) {
+            voteStatusText.textContent = 'Voting is Enabled';
+            voteStatusText.classList.replace('text-red-500', 'text-green-500');
+
+            statusIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />`;
+            statusIcon.classList.replace('text-red-500', 'text-green-500');
+
+            buttonText.textContent = 'Disable Voting';
+            button.classList.replace( 'bg-blue-600', 'bg-red-600');
+            button.classList.replace( 'hover:bg-blue-700', 'hover:bg-red-700');
+
+            buttonIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />`;
+        } else {
+            voteStatusText.textContent = 'Voting is Disabled';
+            voteStatusText.classList.replace('text-green-500', 'text-red-500');
+
+            statusIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />`;
+            statusIcon.classList.replace('text-green-500', 'text-red-500');
+
+            buttonText.textContent = 'Enable Voting';
+            button.classList.replace( 'bg-red-600', 'bg-blue-600');
+            button.classList.replace('hover:bg-red-700', 'hover:bg-blue-700');
+
+            buttonIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />`;
+        }
+    }
 </script>
 </body>
 </html>

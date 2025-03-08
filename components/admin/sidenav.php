@@ -21,7 +21,7 @@ $items = [
 ];
 
 $items2 = [
-    ['href' => '../pages/admin/School.php', 'title' => 'Candidates', 'icon' => $candidateIcon],
+    ['href' => '../pages/admin/Candidates.php', 'title' => 'Candidates', 'icon' => $candidateIcon],
     ['href' => '../pages/admin/Users.php', 'title' => 'Voters', 'icon' => $userIcon],
     ['href' => '../pages/admin/Users.php', 'title' => 'Students', 'icon' => $userIcon]
 ];
@@ -33,13 +33,13 @@ $items3 = [
 
 ];
 ?>
-<aside id="separator-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform duration-500 ease-in-out -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+<aside id="separator-sidebar" class=" fixed top-0 left-0 z-40 w-64 h-screen transition-transform duration-500 ease-in-out -translate-x-full sm:translate-x-0" aria-label="Sidebar">
 
 
-<div class="overflow-y-auto bg-zinc-100 dark:bg-gray-950 relative h-full">
+<div class="overflow-y-auto bg-zinc-100 dark:bg-gray-950 relative h-full ">
         
         <?php if ($school !== null): ?>
-            <div  aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom" class="flex items-center justify-between gap-2 mx-4 my-3  hover:bg-neutral-800 rounded cursor-pointer p-2">
+            <div  aria-expanded="false" data-dropdown-toggle="school-dropdown" data-dropdown-placement="bottom" class="flex items-center justify-between gap-2 mx-4 my-3 hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded cursor-pointer p-2">
                 <img class="mr-2 w-8 h-8 rounded-full object-cover" src="<?= $school['image']; ?>" alt="Profile">
                 <h1 class="w-full text-sm font-semibold dark:text-gray-50 text-gray-900"><?= $school['name']; ?></h1>
                 
@@ -48,15 +48,16 @@ $items3 = [
                 </svg>
             </div>
 
-            <div style="width: calc(100% - 1rem)" class=" z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-zinc-900 dark:divide-gray-600" id="user-dropdown">
+            <div style="width: calc(100% - 2rem)" class=" z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-900 dark:divide-gray-600" id="school-dropdown">
                         <div class="px-4 py-3">
-                            <span class="block text-sm text-gray-900 dark:text-white">Super Admin</span>
-                            <span class="block text-sm text-gray-500 truncate dark:text-gray-400">superadmin@gmail.com</span>
+                            <span class="block text-sm text-gray-900 dark:text-white">Carranglan National HighSchool</span>
+                            <span class="block text-sm text-gray-500 truncate dark:text-gray-400">School ID: 787234</span>
                         </div>
                         <ul class="py-2" aria-labelledby="user-menu-button">
-                            <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">School Settings</a></li>
-                            
-                            <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">System Settings</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Quick Start Guide</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Documentation</a></li>
+               
                         </ul>
                     </div>
         <?php endif; ?>
@@ -99,7 +100,7 @@ $items3 = [
                       <svg class="shrink-0 w-[21px] h-[21px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                           <?= $item['icon']; ?>
                       </svg>
-                      <span class="ms-3"><?= $item['title']; ?></span>
+                      <span class="ms-3 dark:text-white text-black"><?= $item['title']; ?></span>
                   </a>
               </li>
           <?php endforeach; ?>
@@ -117,14 +118,17 @@ $items3 = [
                       <svg class="shrink-0 w-[21px] h-[21px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                           <?= $item['icon']; ?>
                       </svg>
-                      <span class="ms-3"><?= $item['title']; ?></span>
+                      <span class="ms-3 dark:text-white text-black"><?= $item['title']; ?></span>
                   </a>
               </li>
           <?php endforeach; ?>
+                <div class="w-2 mb-24"></div>
         </ul>
+
+        
         
         <div  class="border-t border-gray-200 dark:border-neutral-900 fixed bottom-0 left-0 w-64 dark:bg-gray-950  flex items-center justify-center py-4">
-            <div style="width: calc(16rem - 2rem);" class="rounded flex items-center justify-between gap-2 dark:hover:bg-neutral-800 hover:bg-neutral-200  cursor-pointer p-2">
+            <div aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="top"  style="width: calc(16rem - 2rem);" class="rounded flex items-center justify-between gap-2 dark:hover:bg-neutral-800 hover:bg-neutral-200  cursor-pointer p-2">
                 
                 <img class="mr-2 w-8 h-8 rounded-full object-cover" src="<?= $profile['image']; ?>" alt="Profile">
                         <div class="w-full flex flex-col flex-wrap">
@@ -138,6 +142,17 @@ $items3 = [
                        
         
             </div>
+            <div style="width: calc(100% - 2rem)" class=" z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-900 dark:divide-gray-600" id="user-dropdown">
+                        <div class="px-4 py-3">
+                            <span class="block text-sm text-gray-900 dark:text-white">Super Admin</span>
+                            <span class="block text-sm text-gray-500 truncate dark:text-gray-400">superadmin@gmail.com</span>
+                        </div>
+                        <ul class="py-2" aria-labelledby="user-menu-button">
+                            <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Account Settings</a></li>
+                            
+                            <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a></li>
+                        </ul>
+                    </div>
         </div>
         
         
@@ -165,8 +180,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (updateUrl) {
             const params = new URLSearchParams(window.location.search);
+            if (window.innerWidth < 640) {
+                document.querySelector('[data-drawer-toggle="separator-sidebar"]').click();
+            }
             params.set("menu", index);
             history.pushState(null, "", `${window.location.pathname}?${params.toString()}`);
+           
+            
         }
 
         fetch(url, { method: "GET", headers: { "X-Requested-With": "XMLHttpRequest" } })
@@ -176,7 +196,16 @@ document.addEventListener("DOMContentLoaded", function () {
             const doc = parser.parseFromString(data, "text/html");
             const newContent = doc.querySelector("main");
             if (newContent) {
-                document.querySelector("main").innerHTML = newContent.innerHTML;
+                $.ajax({
+                    url: url,
+                    success: function (data) {
+                        $("#main-content").html(data); // Load content
+                        setTimeout(() => {
+                            window.dispatchEvent(new Event("load"));
+                            
+                        }, 500);
+                    }
+                });
                 
             }
         })
@@ -209,10 +238,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const activeIndex = params.get("menu") || "0";
 
         const activeItem = document.querySelector(`li[data-index='${activeIndex}']`);
+
         if (activeItem) {
             moveBorderTo(activeItem, false);
             const link = activeItem.getAttribute("data-href");
             loadPage(link, activeIndex, false);
+            
         }
 
         

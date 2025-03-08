@@ -74,6 +74,7 @@
     <main id="main-content" class=" p-11 sm:ml-64 rounded-l-lg h-screen border-t border-l border-gray-200 dark:border-neutral-800 
         bg-white dark:bg-zinc-900 bg-cover bg-center "
        >
+       
         
     </main>
 
